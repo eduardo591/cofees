@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="ulti.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<button id="toggleMenu">Menú</button>
+    <nav id="menu" class="hidden">
+        <ul>
+            <li><a href="#logo">Inicio</a></li>
+            <li><a href="#hora">Horarios</a></li>
+            <li>
+                <a href="#pd">Contactos</a>
+                <li><a href="#pago">Formas de pago</a> </li>
+                <ul class="submenu hidden">
+                    <li><a href="#web"></a></li>
+                    <li><a href="#design">Diseño Gráfico</a></li>
+                </ul>
+            </li>
+            <li><a href="#contact"></a></li>
+        </ul>
+    </nav>
+
+
+
+	<div id="logo">
+		<p>Casa del cafe☕</p>
+	</div>
+	<div id="a">
+		
+		<h1 id="a1">CASA DEL CAFE☕</h1>
+		<p id="a2">
+		En casa del café encontrarás los mejores cafés para disfrutar 
+		   y pasar los mejores momentos en familia disfrutando
+		             lo mejor de la esencia del café.
+		</p>
+		<button id="a3"><a href="#secio">Informacion</a></button>
+	</div>
+	<div id="linea1">
+		<p>-</p>
+	</div>
+
+	<div id="b" >
+		<h1 id="b2">TIPOS DE CAFE</h1>
+<p id="b3"> 
+    La variedad de sabores que ofrece la casa del café te sorprenderá   
+           tenemos distintos tipos de sabores lo que nos hace 
+                  perfectos para compartir en familia 
+</p>
+	</div>
+	<div id="cafe">
+		<p>-</p>
+	</div>
+	<div id="linea">
+		<p>-</p>
+	</div>
+	<div id="c"></div>
+	<div id="c1"></div>
+	<div id="c2"></div>
+
+	<div id="c3">
+		<p>El café clásico es 100% robusta con alto rendimiento y toques de chocolate amargo. </p>
+	</div>
+	<div id="c4">
+		<p>El café con crema es una bebida deliciosa  que combina la intensidad del café con la riqueza de la crema.</p>
+	</div>
+	<div id="c5">
+		<p>El café helado es una bebida refrescante y energizante que combina la intensidad del café con la frescura del hielo.</p>
+	</div>
+<div id="cafe1"></div>
+	<div class="parallax">
+		<h1 id="pago">FORMAS DE PAGO</h1>
+	</div>
+	<div id="pago1"></div>
+	
+		<p id="pago11">
+		En Casa del cafe puede pagar desde
+		       tu billetera digital mas facil
+		                  bitcoin</p>
+	</div>
+	<div id="pago2"></div>
+	<p id="pago22">
+	Tambien puedes pagar por medio de tus 
+             tarjetas de tu banco de tu mayor 
+                 preferencia facil y rapido</p>
+	
+
+	<div id="pago3"></div>
+	<p id="pago33">
+  Sabes que tambien puedes pagar en efectivo 
+ 	   como tu te sientas comodo puedes
+	              paga en dolares</p>
+</div>
+			<div id="secio" >
+				<h1 id="se">INFORMACION</h1>
+				<p id="sec" class="b">
+
+Sabias que al tomar café te permite mantener con muchas
+	energías encuentra los mejores cafés para que te
+		sientas con energía durante todo el día</p>
+			</div>
+
+
+
+
+		<div id="secio1">
+    <iframe id="video" width="569" height="345" src="https://www.youtube.com/embed/GuDJScFuJCk?enablejsapi=1&autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+<div id="servi"></div>
+<div id="servicio">
+	<h1 id="hora">HORARIOS</h1>
+</div>
+<div id="horai"></div>
+		
+<div id="linea7"></div>
+<div id="redes">
+</div>
+<div class="parent"> <div id="pd" class="con1">CONTACTOS</div> </div>
+<div id="RE">
+	<a href="https://www.instagram.com/danilo00_00/profilecard/?igsh=ZmY2cW9vOXhmMXVi" class="con2"></a>
+</div>
+<div id="redesco">
+	<p>Si deseas </p>
+</div>
+<div id="cel">
+	<h1>Tel:7667-4567</h1>
+</div>
+<div id="cel1">
+	<h1 id="wha">WhatsApp:4537-4578</h1>
+</div>
+</body>
+</html>
+
+	
+
+<script>
+    // Cargar la API de YouTube
+    function loadYouTubeAPI() {
+        const tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        const firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    }
+
+    // Función para reproducir el video
+    function onYouTubeIframeAPIReady() {
+        const player = new YT.Player('video', {
+            events: {
+                'onReady': function(event) {
+                    window.addEventListener('scroll', function() {
+                        const rect = document.getElementById('secio1').getBoundingClientRect();
+                        if (rect.top < window.innerHeight && rect.bottom > 0) {
+                            event.target.playVideo();
+                            window.removeEventListener('scroll', arguments.callee); // Evitar que se reproduzca múltiples veces
+                        }
+                    });
+                }
+            }
+        });
+    }
+
+    // Cargar la API de YouTube al cargar la página
+    window.onload = loadYouTubeAPI;
+
+document.addEventListener('scroll', function() {
+    const element = document.querySelector('.b');
+    const position = element.getBoundingClientRect().top;
+
+    // Si el elemento está visible en la ventana
+    if (position < window.innerHeight && position > 10) {
+        element.classList.add('scrolled');
+    } else if (position > window.innerHeight) {
+        // Opcional: quitar la clase si el elemento sale de la vista hacia arriba
+        element.classList.remove('scrolled');
+    }
+});
+
+document.addEventListener('scroll', function() {
+    const element = document.querySelector('.con1');
+    const position = element.getBoundingClientRect().top;
+
+    // Si el elemento está visible en la ventana
+    if (position < window.innerHeight && position > 0) {
+        element.classList.add('scrolled');
+    } else if (position > window.innerHeight) {
+        // Opcional: quitar la clase si el elemento sale de la vista hacia arriba
+        element.classList.remove('scrolled');
+    }
+});
+
+
+    
+    document.getElementById('toggleMenu').addEventListener('click', function() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('hidden');
+            menu.style.display = menu.classList.contains('hidden') ? 'none' : 'block'; // Mostrar/Ocultar el menú
+        });
+</script>
+
